@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -59,21 +61,25 @@ main {
   cursor: pointer;
 }
 
+/* ========================================================================================== */
+
 .memeImage {
   max-width: 100%;
   margin-top: 30px;
 }
 
-.img-div {
+.meme {
   position: relative;
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 
 .meme-text {
-  font-size: 50px;
-  color: white; /* text color */
-    text-shadow: 
+  font-size: 3em;
+  font-family: 'Bowlby One SC', sans-serif;
+  color: white; 
+  text-shadow: 
         -1px -1px 0 black,
          1px -1px 0 black,
         -1px  1px 0 black,

@@ -1,5 +1,4 @@
-import React from "react";
-import memesData from "../memesData";
+import React, {useState, useEffect} from "react";
 
 export default function Meme() {
     const [meme, setMeme]= React.useState({
@@ -8,12 +7,17 @@ export default function Meme() {
         randomImage: "https://i.imgflip.com/30b1gx.jpg"
     })
 
-    const [allMemeImages]= React.useState(memesData)
+    const [allMemes, setAllMemes]= React.useState([])
+
+    React.useEffect(() => {
+        fetch("https://api.imgflip.com/get_memes")
+            .then(res => res.json())
+            .then(data => setAllMemes(data.data.memes)) 
+    }, [])
 
     function getmemeImg() {
-        const memesArray= memesData.data.memes
-        const randomNumber= Math.floor(Math.random() * memesArray.length)
-        const url= memesArray[randomNumber].url
+        const randomNumber= Math.floor(Math.random() * allMemes.length)
+        const url= allMemes[randomNumber].url
         setMeme(prevMeme => ({
             ...prevMeme,
             randomImage: url
@@ -49,7 +53,7 @@ export default function Meme() {
                 />
                 <button className="form-btn" onClick={getmemeImg}>Get a new meme image 🖼️</button>
             </div>
-            <div className="img-div">
+            <div className="meme">
                 <img src={meme.randomImage} alt="memeImage" className="memeImage" />
                 <h2 className="meme-text top">{meme.topText}</h2>
                 <h2 className="meme-text bottom">{meme.bottomText}</h2>
