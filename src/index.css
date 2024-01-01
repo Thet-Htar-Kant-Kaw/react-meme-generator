@@ -17,7 +17,7 @@ main {
   height: 65px;
   color: white;
   padding: 20px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
 }
 
 .header-image {
@@ -54,8 +54,38 @@ main {
   grid-column: 1 / -1;
   font-family: "Karla", sans-serif;
   border-radius: 5px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  color: white;
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);  color: white;
   border: none;
   cursor: pointer;
 }
 
+.memeImage {
+  max-width: 100%;
+  margin-top: 30px;
+}
+
+.img-div {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.meme-text {
+  font-size: 50px;
+  color: white; /* text color */
+    text-shadow: 
+        -1px -1px 0 black,
+         1px -1px 0 black,
+        -1px  1px 0 black,
+         1px  1px 0 black;
+}
+
+.top {
+  position: absolute;
+  top: 20px;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 20px;
+}
